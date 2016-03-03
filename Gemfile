@@ -33,6 +33,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'haml', '~> 4.0', '>= 4.0.7'
+gem 'haml-rails', '~> 0.9.0'
+gem 'simple_form', '~> 3.2', '>= 3.2.1'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'

@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %meta{ content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{ content: "width=device-width, initial-scale=1", name: "viewport" }/
+    %title SomethingTODO
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .container-fluid
+      .row
+        .col-xs-12.col-md-offset-1.col-md-10
+          = yield
+
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
