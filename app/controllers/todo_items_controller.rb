@@ -6,11 +6,11 @@ class TodoItemsController < ApplicationController
 
   def create
     @todo_item = TodoItem.new todo_item_params
-    if @todo_item.save
-      redirect_to todo_items_path, notice: 'Item saved!'
-    else
-      @todo_items = TodoItem.all
-      render :index
+
+    respond_to do |format|
+      if @todo_item.save
+        format.js {}
+      end
     end
   end
 

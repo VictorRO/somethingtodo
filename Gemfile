@@ -37,12 +37,14 @@ gem 'haml', '~> 4.0', '>= 4.0.7'
 gem 'haml-rails', '~> 0.9.0'
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+gem 'rails-i18n', '~> 4.0.0'
 
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'pry-rails'
   gem 'quiet_assets'
+  gem 'spring-commands-rspec'
 end
 
 group :development, :test do
@@ -59,4 +61,5 @@ group :test do
   gem 'launchy', '~> 2.4', '>= 2.4.3'
   gem 'selenium-webdriver', '~> 2.52'
   gem 'shoulda-matchers', '~> 3.1', '>= 3.1.1'
+  gem 'capybara-webkit', '~> 1.8'
 end
