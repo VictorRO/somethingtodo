@@ -1,1 +1,3 @@
-$("<%= escape_javascript(render @todo_item) %>").appendTo("#todo_items tbody");
+$('#todo_item_title').val('');
+
+$("<%= escape_javascript(render @todo_item) %>").appendTo("#todo");

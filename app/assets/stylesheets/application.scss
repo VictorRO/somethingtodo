@@ -1,11 +1,53 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.table > thead > tr > th,
-.table > thead > tr > td,
-.table > tbody > tr > th,
-.table > tbody > tr > td,
-.table > tfoot > tr > th,
-.table > tfoot > tr > td {
-  border: none;
+$main-bg-color: #F9F9F9;
+$main-color: #333;
+$odd-bg-color: #EFEFEF;
+$even-bg-color: #FFF;
+$done-color: #999;
+
+body {
+  background-color: $main-bg-color;
+}
+
+.jumbotron {
+  h1 {
+    font-size: 45px;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding: 5px 10px;
+
+    a {
+      color: $main-color;
+    }
+  }
+
+  li:nth-child(odd) {
+    background-color: $odd-bg-color;
+  }
+
+  li:nth-child(even) {
+    background-color: $even-bg-color;
+  }
+}
+
+#todo {
+  margin-top: 25px;
+}
+
+#done {
+  margin-top: 50px;
+  color: $done-color;
+
+  li {
+    background-color: $main-bg-color;
+    text-decoration: line-through;
+  }
 }

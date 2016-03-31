@@ -1,2 +1,5 @@
-%tr
-  %td=todo_item.title
+= content_tag_for :li, todo_item do
+  - unless todo_item.done?
+    = link_to todo_item.title, [todo_item, :finish], method: :post
+  - else
+    = todo_item.title

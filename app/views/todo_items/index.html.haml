@@ -1,16 +1,16 @@
-%h1.page-header
-  Something TODO
-
 .row
   .col-xs-12.col-md-6
     = simple_form_for(@todo_item, remote: true) do |f|
-      .form-group
+      .input-group
         = f.input :title, label: false
-      .form-group
-        = f.button :submit, t("buttons.submit"), { class: 'btn-primary', data: { role: 'submit' } }
+        .input-group-btn
+          = f.button :submit, t("buttons.submit"), { class: 'btn-default', data: { role: 'submit' } }
 
 .row
   .col-xs-12.col-md-6
-    %table#todo_items.table.table-striped
-      %tbody
-        = render @todo_items
+    %ul#todo
+      = render @todo_items
+.row
+  .col-xs-12.col-md-6
+    %ul#done
+      = render @done_items

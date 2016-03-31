@@ -8,15 +8,10 @@ RSpec.feature "User submits a todo item" do
     fill_in "todo_item_title", with: todo_title
     find("[data-role=submit]").click
 
-    expect(page).to have_content "First thing to do"
-  end
+    within "#todo" do
+      expect(page).to have_content "First thing to do"
+    end
 
-  # context "the form is invalid" do
-  #   scenario "they see the error message", :js do
-  #     visit root_path
-  #     find("[data-role=submit]").click
-  #
-  #     expect(page).to have_content "no pot estar en blanc"
-  #   end
-  # end
+    expect(find("#new_todo_item").find("input[type=text]")).not_to eq todo_title
+  end
 end
