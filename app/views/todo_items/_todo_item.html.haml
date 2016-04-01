@@ -1,4 +1,4 @@
-= content_tag_for :li, todo_item do
+= content_tag_for :li, todo_item, class: todo_li_class(todo_item) do
   - unless todo_item.done?
     = link_to todo_item.title, [todo_item, :finish], method: :post
   - else

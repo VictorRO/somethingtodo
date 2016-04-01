@@ -1,53 +1,126 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-$main-bg-color: #F9F9F9;
+$main-bg-color: #e6e8e7;
 $main-color: #333;
-$odd-bg-color: #EFEFEF;
-$even-bg-color: #FFF;
+$nav-bg-color: #636f7f;
+$nav-border-color: #536071;
+$nav-a-color: #CCD0D2;
+$nav-a-hover: #edf1f2;
+$todos-border-color: #dbdfe0;
+$todos-bg-color: #f2f2f2;
+$li-bg-color: #FFF;
 $done-color: #999;
+$done-bg-color: #FCFCFC;
+
+/* override bootstrap */
+
+.navbar {
+  border-radius: 0px;
+  min-height: 35px;
+}
+
+.navbar-brand {
+  padding: 8px 15px;
+  font-size: 16px;
+  line-height: 19px;
+  height: 35px;
+}
+
+.navbar-nav > li > a {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.navbar-default {
+  background-color: $nav-bg-color;
+  border-color: $nav-border-color;
+
+  .navbar-nav > li > a,
+  .navbar-brand {
+    color: $nav-a-color;
+  }
+
+  .navbar-nav > li > a:hover,
+  .navbar-brand:hover {
+    color: $nav-a-hover;
+  }
+
+  .glyphicon {
+    border: 1px solid $nav-a-color;
+    border-radius: 4px;
+    padding: 2px 3px;
+    margin-right: 5px;
+  }
+}
+
+/* custom */
 
 body {
   background-color: $main-bg-color;
 }
 
-.jumbotron {
-  h1 {
-    font-size: 45px;
-  }
-}
-
-ul {
+ul.todos {
   list-style: none;
   padding: 0;
 
   li {
-    padding: 5px 10px;
+    padding: 10px 15px;
 
     a {
       color: $main-color;
     }
   }
-
-  li:nth-child(odd) {
-    background-color: $odd-bg-color;
-  }
-
-  li:nth-child(even) {
-    background-color: $even-bg-color;
-  }
 }
 
-#todo {
+.todos {
+  border: 1px solid $todos-border-color;
+  border-radius: 5px;
+  background-color: $todos-bg-color;
   margin-top: 25px;
-}
-
-#done {
-  margin-top: 50px;
-  color: $done-color;
 
   li {
-    background-color: $main-bg-color;
+    border: 1px solid $todos-border-color;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: $li-bg-color;
+  }
+
+  li.done {
+    color: $done-color;
+    background-color: $done-bg-color;
     text-decoration: line-through;
+  }
+}
+
+#main,
+#starred,
+#have_time {
+  li.header {
+    margin: 0px;
+    border: 0px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 5px 5px 0 0;
+    padding: 5px 15px;
+  }
+}
+
+#main {
+  li.header {
+    background-color: #81cfd1;
+  }
+}
+
+#starred {
+  li.header {
+    background-color: #dfd67b;
+  }
+}
+
+#have_time {
+  li.header {
+    background-color: #80d087;
   }
 }

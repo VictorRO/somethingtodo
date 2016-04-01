@@ -1,5 +1,5 @@
 .row
-  .col-xs-12.col-md-6
+  .col-xs-12.col-md-4
     = simple_form_for(@todo_item, remote: true) do |f|
       .input-group
         = f.input :title, label: false
@@ -7,10 +7,7 @@
           = f.button :submit, t("buttons.submit"), { class: 'btn-default', data: { role: 'submit' } }
 
 .row
-  .col-xs-12.col-md-6
-    %ul#todo
+  .col-xs-12.col-md-4
+    %ul.todos#main
+      %li.header Main
       = render @todo_items
-.row
-  .col-xs-12.col-md-6
-    %ul#done
-      = render @done_items

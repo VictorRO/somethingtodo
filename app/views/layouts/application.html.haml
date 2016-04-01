@@ -7,14 +7,27 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    .jumbotron
-      .container
-        %h1 Something...
+    %nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          %button.navbar-toggle.collapsed{ data: { toggle: 'collapse', target: '#main-navbar', 'aria-expanded' => 'false' } }
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to 'Something to-do', root_path, class: 'navbar-brand'
 
-        %p Create your to-do list here using this simple form and get your stuff done!
+        #main-navbar.collapse.navbar-collapse
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              = link_to '#' do
+                %i.glyphicon.glyphicon-user
+                Víctor Rodríguez
 
-    .container
+
+    .container-fluid
       .row
-        = yield
+        .col-xs-12
+          = yield
 
     = javascript_include_tag 'application', 'data-turbolinks-track' => true

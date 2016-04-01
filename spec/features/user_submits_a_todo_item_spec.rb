@@ -8,9 +8,7 @@ RSpec.feature "User submits a todo item" do
     fill_in "todo_item_title", with: todo_title
     find("[data-role=submit]").click
 
-    within "#todo" do
-      expect(page).to have_content "First thing to do"
-    end
+    expect(page).to have_content "First thing to do"
 
     expect(find("#new_todo_item").find("input[type=text]")).not_to eq todo_title
   end

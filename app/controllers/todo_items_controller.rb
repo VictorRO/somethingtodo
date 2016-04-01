@@ -1,8 +1,7 @@
 class TodoItemsController < ApplicationController
   def index
     @todo_item = TodoItem.new
-    @todo_items = TodoItem.todo
-    @done_items = TodoItem.done
+    @todo_items = TodoItem.all
   end
 
   def create

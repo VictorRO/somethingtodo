@@ -6,12 +6,8 @@ RSpec.feature "User marks a todo item as done" do
 
     visit root_path
 
-    within "#todo" do
-      click_link item.title
-    end
+    click_link item.title
 
-    within "#done" do
-      expect(page).to have_content item.title
-    end
+    expect(page).to have_css "li#todo_item_#{item.id}.done", text: item.title
   end
 end
