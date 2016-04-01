@@ -1,0 +1,20 @@
+%ul#calendar
+  %li.col-xs-1.first
+    %i{ class: 'glyphicon glyphicon-chevron-left' }
+  %li.col-xs-2
+    %h4= (current_date - 2).to_s(:day)
+    %p= (current_date - 2).to_s(:month_day)
+  %li.col-xs-2
+    %h4= (current_date - 1).to_s(:day)
+    %p= (current_date - 1).to_s(:month_day)
+  %li.col-xs-2.current
+    %h4= current_date.to_s(:day)
+    %p= current_date.to_s(:month_day)
+  %li.col-xs-2
+    %h4= (current_date + 1).to_s(:day)
+    %p= (current_date + 1).to_s(:month_day)
+  %li.col-xs-2
+    %h4= (current_date + 2).to_s(:day)
+    %p= (current_date + 2).to_s(:month_day)
+  %li.col-xs-1.last
+    %i{ class: 'glyphicon glyphicon-chevron-right' }

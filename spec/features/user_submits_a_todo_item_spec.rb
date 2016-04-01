@@ -6,7 +6,7 @@ RSpec.feature "User submits a todo item" do
 
     visit root_path
     fill_in "todo_item_title", with: todo_title
-    find("[data-role=submit]").click
+    find("form").trigger('submit')
 
     expect(page).to have_content "First thing to do"
 

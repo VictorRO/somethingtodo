@@ -1,13 +1,16 @@
 .row
-  .col-xs-12.col-md-4
+  .col-xs-12.col-sm-4
     = simple_form_for(@todo_item, remote: true) do |f|
-      .input-group
-        = f.input :title, label: false
-        .input-group-btn
-          = f.button :submit, t("buttons.submit"), { class: 'btn-default', data: { role: 'submit' } }
+      .form-group
+        = f.input :title, label: false, placeholder: 'Add a to-do...'
+      .form-group.hidden
+        = f.button :submit, t("buttons.submit"), { class: 'btn-default', data: { role: 'submit' } }
+
+  .col-md-8.hidden-xs.hidden-sm
+    = render partial: 'common/calendar', locals: { current_date: Date.current }
 
 .row
-  .col-xs-12.col-md-4
+  .col-xs-12.col-sm-4
     %ul.todos#main
       %li.header Main
       = render @todo_items
