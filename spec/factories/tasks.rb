@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :todo_item do
+  factory :task do
     title { Faker::Lorem.sentence }
     done false
   end

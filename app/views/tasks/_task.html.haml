@@ -1,0 +1,9 @@
+= content_tag_for :li, task, class: "#{todo_li_class(task)} draggable" do
+  - unless task.done?
+    = link_to [task, :finish], method: :post, class: 'clearfix' do
+      %i.glyphicon.glyphicon-unchecked
+      %span= task.title
+  - else
+    .clearfix
+      %i.glyphicon.glyphicon-check
+      %span= task.title

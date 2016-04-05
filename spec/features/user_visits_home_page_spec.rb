@@ -1,23 +1,23 @@
 require 'rails_helper'
 
 RSpec.feature 'user visits home page' do
-  scenario 'they see the todo items in three columns, inbox, starred and later' do
-    starred_todo = create(:todo_item, priority: 'high')
-    inbox_todo = create(:todo_item, priority: 'normal')
-    later_todo = create(:todo_item, priority: 'low')
+  scenario 'they see the current tasks in three columns, inbox, starred and later' do
+    starred_task = create(:task, priority: 'high')
+    inbox_task = create(:task, priority: 'normal')
+    later_task = create(:task, priority: 'low')
 
     visit root_path
 
     within('#main') do
-      expect(page).to have_content inbox_todo.title
+      expect(page).to have_content inbox_task.title
     end
 
     within('#starred') do
-      expect(page).to have_content starred_todo.title
+      expect(page).to have_content starred_task.title
     end
 
     within('#have_time') do
-      expect(page).to have_content later_todo.title
+      expect(page).to have_content later_task.title
     end
   end
 end

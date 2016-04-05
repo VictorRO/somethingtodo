@@ -38,6 +38,7 @@ gem 'haml-rails', '~> 0.9.0'
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'rails-i18n', '~> 4.0.0'
+gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
 
 group :development do
   gem 'web-console', '~> 2.0'

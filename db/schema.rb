@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160401150546) do
+ActiveRecord::Schema.define(version: 20160405134101) do
 
-  create_table "todo_items", force: :cascade do |t|
+  create_table "tasks", force: :cascade do |t|
     t.string   "title"
     t.boolean  "done",       default: false
     t.datetime "created_at",                    null: false

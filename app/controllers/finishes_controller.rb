@@ -1,8 +1,8 @@
 class FinishesController < ApplicationController
   def create
-    todo_item = TodoItem.find(params[:todo_item_id])
+    task = Task.find(params[:task_id])
 
-    if todo_item.update(done: true)
+    if task.update(done: true)
       redirect_to root_path
     end
   end

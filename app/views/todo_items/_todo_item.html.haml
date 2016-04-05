@@ -1,9 +1,0 @@
-= content_tag_for :li, todo_item, class: todo_li_class(todo_item) do
-  - unless todo_item.done?
-    = link_to [todo_item, :finish], method: :post, class: 'clearfix' do
-      %i.glyphicon.glyphicon-unchecked
-      %span= todo_item.title
-  - else
-    .clearfix
-      %i.glyphicon.glyphicon-check
-      %span= todo_item.title

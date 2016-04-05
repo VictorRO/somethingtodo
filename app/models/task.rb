@@ -1,4 +1,4 @@
-class TodoItem < ActiveRecord::Base
+class Task < ActiveRecord::Base
   validates :title, presence: true, uniqueness: true
 
   scope :high, -> { where(priority: 'high') }
