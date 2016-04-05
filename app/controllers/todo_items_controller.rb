@@ -1,7 +1,9 @@
 class TodoItemsController < ApplicationController
   def index
     @todo_item = TodoItem.new
-    @todo_items = TodoItem.all
+    @todos_normal = TodoItem.normal
+    @todos_high = TodoItem.high
+    @todos_low = TodoItem.low
   end
 
   def create

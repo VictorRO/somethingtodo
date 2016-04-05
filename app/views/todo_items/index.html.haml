@@ -12,5 +12,21 @@
 .row
   .col-xs-12.col-sm-4
     %ul.todos#main
-      %li.header Main
-      = render @todo_items
+      %li.header
+        %i.glyphicon.glyphicon-inbox
+        Inbox
+      = render @todos_normal
+
+  .col-xs-12.col-sm-4
+    %ul.todos#starred
+      %li.header
+        %i.glyphicon.glyphicon-star
+        Important
+      = render @todos_high
+
+  .col-xs-12.col-sm-4
+    %ul.todos#have_time
+      %li.header
+        %i.glyphicon.glyphicon-arrow-right
+        Later
+      = render @todos_low

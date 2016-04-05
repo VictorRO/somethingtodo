@@ -74,6 +74,7 @@ ul.todos {
 
     a {
       color: $main-color;
+      text-decoration: none;
     }
   }
 }
@@ -94,7 +95,9 @@ ul.todos {
   li.done {
     color: $done-color;
     background-color: $done-bg-color;
-    text-decoration: line-through;
+    span {
+      text-decoration: line-through;
+    }
   }
 }
 
@@ -169,5 +172,13 @@ ul.todos {
     background-color: #da6666;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+  }
+}
+
+.todo_item {
+  position: relative;
+
+  .glyphicon {
+    margin-right: 5px;
   }
 }
