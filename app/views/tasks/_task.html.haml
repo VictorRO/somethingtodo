@@ -1,4 +1,6 @@
 = content_tag_for :li, task, class: "#{todo_li_class(task)} draggable" do
+  = simple_form_for task, class: 'hidden' do |f|
+    = f.input :priority, as: :hidden, class: 'task_priority'
   - unless task.done?
     = link_to [task, :finish], method: :post, class: 'clearfix' do
       %i.glyphicon.glyphicon-unchecked

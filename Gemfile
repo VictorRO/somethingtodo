@@ -53,6 +53,8 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
   gem 'factory_girl_rails', '~> 4.6'
+  gem 'jasmine', '~> 2.4'
+  gem 'jasmine-jquery-rails', '~> 2.0', '>= 2.0.3'
 end
 
 group :test do

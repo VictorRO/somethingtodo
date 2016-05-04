@@ -5,6 +5,7 @@ RSpec.feature 'user visits home page' do
     starred_task = create(:task, priority: 'high')
     inbox_task = create(:task, priority: 'normal')
     later_task = create(:task, priority: 'low')
+    completed_task = create(:task, completed_at: 1.day.ago)
 
     visit root_path
 
@@ -19,5 +20,7 @@ RSpec.feature 'user visits home page' do
     within('#have_time') do
       expect(page).to have_content later_task.title
     end
+
+    expect(page).not_to have_content completed_task.title
   end
 end

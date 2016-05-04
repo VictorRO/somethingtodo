@@ -1,6 +1,6 @@
 .row
   .col-xs-12.col-sm-4
-    = simple_form_for(@task, remote: true) do |f|
+    = simple_form_for(@todo_item, remote: true) do |f|
       .form-group
         = f.input :title, label: false, placeholder: 'Add a to-do...'
       .form-group.hidden
@@ -13,17 +13,20 @@
   .col-xs-12.col-sm-4
     %ul.todos#main
       %li.header
+        %i.glyphicon.glyphicon-inbox
         Inbox
-      = render(@tasks_normal) || render('empty')
+      = render @todos_normal
 
   .col-xs-12.col-sm-4
     %ul.todos#starred
       %li.header
-        Important Stuff
-      = render(@tasks_high) || render('empty')
+        %i.glyphicon.glyphicon-star
+        Important
+      = render @todos_high
 
   .col-xs-12.col-sm-4
     %ul.todos#have_time
       %li.header
-        If I Have Time
-      = render(@tasks_low) || render('empty')
+        %i.glyphicon.glyphicon-arrow-right
+        Later
+      = render @todos_low

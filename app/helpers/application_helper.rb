@@ -1,7 +1,7 @@
 module ApplicationHelper
 
-  def todo_li_class(todo_item)
-    'done' if todo_item.done?
+  def todo_li_class(task)
+    'done' if task.done?
   end
 
 end

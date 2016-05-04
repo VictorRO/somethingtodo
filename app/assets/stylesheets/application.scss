@@ -62,7 +62,7 @@ body {
   background-color: $main-bg-color;
 }
 
-#new_todo_item {
+#new_task {
   margin-top: 15px;
 }
 
@@ -176,10 +176,15 @@ ul.todos {
   }
 }
 
-.todo_item {
+.task {
   position: relative;
 
   .glyphicon {
     margin-right: 5px;
   }
+}
+
+.task.droppable {
+  background-color: #EEE;
+  border: 2px dashed $todos-border-color;
 }
