@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'tasks/_task.html.haml' do
-  context 'if the task is not done' do
+  context 'when the task is not done' do
     it 'renders a link to mark the item done' do
       task = create(:task, done: false)
 
@@ -11,7 +11,7 @@ RSpec.describe 'tasks/_task.html.haml' do
     end
   end
 
-  context 'if the task is done' do
+  context 'when the task is done' do
     it 'just renders the title' do
       task = create(:task, done: true)
 

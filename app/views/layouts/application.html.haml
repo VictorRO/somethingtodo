@@ -3,9 +3,12 @@
   %head
     %meta{ content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{ content: "width=device-width, initial-scale=1", name: "viewport" }/
-    %title Something to-do
+    %title= full_title(yield(:title))
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = favicon_link_tag 'logo.png'
     = csrf_meta_tags
+
+
   %body
     %nav.navbar.navbar-default
       .container
@@ -15,10 +18,15 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          = link_to 'Something to-do', root_path, class: 'navbar-brand'
+          = link_to root_path, class: 'navbar-brand' do
+            %span.glyphicon.glyphicon-check
 
         #main-navbar.collapse.navbar-collapse
           %ul.nav.navbar-nav.navbar-right
+            -# %li
+            -#   = link_to 'Home', '#'
+            -# %li
+            -#   = link_to 'Log in', '#'
             %li
               = link_to '#' do
                 %i.glyphicon.glyphicon-user

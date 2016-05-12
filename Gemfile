@@ -55,13 +55,14 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.6'
   gem 'jasmine', '~> 2.4'
   gem 'jasmine-jquery-rails', '~> 2.0', '>= 2.0.3'
+  gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 end
 
 group :test do
   gem 'faker', '~> 1.6', '>= 1.6.1'
   gem 'capybara', '~> 2.6', '>= 2.6.2'
   gem 'database_cleaner', '~> 1.5', '>= 1.5.1'
-  gem 'launchy', '~> 2.4', '>= 2.4.3'
+  gem 'launchy', '~> 2.4', '>= 2.4.3' # save_and_open_page
   gem 'selenium-webdriver', '~> 2.52'
   gem 'shoulda-matchers', '~> 3.1', '>= 3.1.1'
   gem 'capybara-webkit', '~> 1.8'

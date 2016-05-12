@@ -1,11 +1,15 @@
 require 'rails_helper'
 
-RSpec.describe Task, type: :model do
+RSpec.describe Task, "validations" do
   it { is_expected.to validate_presence_of :title }
   it { is_expected.to validate_uniqueness_of :title }
+
+  it "has a valid factory" do
+    expect(build(:task)).to be_valid
+  end
 end
 
-RSpec.describe Task, '#high' do
+RSpec.describe Task, '.high' do
   it 'returns the high priority tasks' do
     high_priority_todo = create(:task, priority: 'high')
     not_hight_priority_todo = create(:task, priority: 'not_high')
@@ -14,7 +18,7 @@ RSpec.describe Task, '#high' do
   end
 end
 
-RSpec.describe Task, '#normal' do
+RSpec.describe Task, '.normal' do
   it 'returns the normal priority tasks' do
     normal_priority_todo = create(:task, priority: 'normal')
     not_normal_priority_todo = create(:task, priority: 'not_normal')
@@ -23,7 +27,7 @@ RSpec.describe Task, '#normal' do
   end
 end
 
-RSpec.describe Task, '#low' do
+RSpec.describe Task, '.low' do
   it 'returns the low priority tasks' do
     low_priority_todo = create(:task, priority: 'low')
     not_low_priority_todo = create(:task, priority: 'not_low')
@@ -32,7 +36,7 @@ RSpec.describe Task, '#low' do
   end
 end
 
-RSpec.describe Task, '#from_today' do
+RSpec.describe Task, '.from_today' do
   it 'returns the tasks not completed and those completed today' do
     not_completed_task = create(:task, completed_at: nil, done: false)
     today_completed_task = create(:task, completed_at: Time.zone.now, done: true)

@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
 
-  resources :tasks, only: [:create, :index, :update] do
-    resource :finish, only: [:create]
+  get 'home', to: 'static_pages#home'
+  get 'about', to: 'static_pages#about'
+
+  constraints subdomain: 'app' do
+    resources :tasks, only: [:create, :index, :update] do
+      resource :finish, only: [:create]
+    end
+
+    root 'tasks#index', as: :app_root
   end
 
-  root to: "tasks#index"
+  root 'static_pages#home'
 end

@@ -1,0 +1,42 @@
+!!!
+%html
+  %head
+    %meta{ content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{ content: "width=device-width, initial-scale=1", name: "viewport" }/
+    %title= full_title(yield(:title))
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    %link{ href: "http://fonts.googleapis.com/css?family=Roboto+Slab:400,300", rel: "stylesheet", type: "text/css"}
+    = favicon_link_tag 'logo.png'
+    = csrf_meta_tags
+    = render 'common/shiv'
+
+  %body#marketing
+    .container-fluid
+      .row
+        .col-xs-12
+          %header
+            = link_to 'Sign in', '#', class: 'btn btn-danger pull-right', id: 'sign_in'
+
+            %h1
+              = link_to root_path do
+                %span.glyphicon.glyphicon-check
+                Something TO-DO
+
+      .row
+        .col-xs-12
+          = yield
+
+    %footer
+      .row
+        .col-xs-12.col-sm-6.col-sm-offset-3
+          .center
+            %a{ href: "#" } Something TO-DO
+            by
+            %a{ href: "http://www.rodriguezortega.com/" } Víctor Rodríguez Ortega
+        .col-xs-12.col-sm-3
+          %nav.pull-right.visible-md-block.visible-lg-block
+            %ul
+              %li= link_to "About",   about_path
+              %li= link_to "Contact", 'mailto:victor@rodriguezortega.com'
+
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true

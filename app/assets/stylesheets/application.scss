@@ -11,7 +11,7 @@ $nav-a-hover: #edf1f2;
 $todos-border-color: #dbdfe0;
 $todos-bg-color: #f2f2f2;
 $li-bg-color: #FFF;
-$done-color: #999;
+$gray-light: #999;
 $done-bg-color: #FCFCFC;
 
 /* override bootstrap */
@@ -38,6 +38,16 @@ $done-bg-color: #FCFCFC;
   background-color: $nav-bg-color;
   border-color: $nav-border-color;
 
+  .navbar-brand {
+    .glyphicon {
+      border: none;
+      color: #FFF;
+      font-size: 20px;
+      padding: 0;
+      margin-top: -3px;
+    }
+  }
+
   .navbar-nav > li > a,
   .navbar-brand {
     color: $nav-a-color;
@@ -47,6 +57,7 @@ $done-bg-color: #FCFCFC;
   .navbar-brand:hover {
     color: $nav-a-hover;
   }
+
 
   .glyphicon {
     border: 1px solid $nav-a-color;
@@ -60,6 +71,13 @@ $done-bg-color: #FCFCFC;
 
 body {
   background-color: $main-bg-color;
+  font-size: 16px;
+}
+
+::selection {
+  color: rgb(255, 255, 255);
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 1px;
+  background: rgba(254, 87, 161, 1);
 }
 
 #new_task {
@@ -80,6 +98,10 @@ ul.todos {
   }
 }
 
+.center {
+  text-align: center;
+}
+
 .todos {
   border: 2px solid $todos-border-color;
   border-radius: 7px;
@@ -94,7 +116,7 @@ ul.todos {
   }
 
   li.done {
-    color: $done-color;
+    color: $gray-light;
     background-color: $done-bg-color;
     span {
       text-decoration: line-through;
@@ -187,4 +209,88 @@ ul.todos {
 .task.droppable {
   background-color: #EEE;
   border: 2px dashed $todos-border-color;
+}
+
+/* marketing */
+
+#marketing {
+  background-color: #FEFEFE;
+
+  .container-fluid {
+    background-size: cover;
+    background-position: center top;
+    padding-bottom: 5em;
+  }
+
+  header {
+    margin: 30px;
+
+    h1 {
+      font-size: 22px;
+      font-family: "Roboto Slab", serif;
+
+      a {
+        color: #333;
+
+        &:hover {
+          color: #d9534f;
+          text-decoration: none;
+        }
+
+        .glyphicon {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  h2 {
+    font-family: "Roboto Slab", serif;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-top: 3em;
+    margin-bottom: 1em;
+
+    small {
+      color: #777;
+      font-weight: 300;
+    }
+  }
+
+  img {
+    margin: auto;
+  }
+
+  .sign_up {
+    margin-top: 30px;
+    color: $nav-bg-color;
+  }
+
+  h1, p {
+    margin-bottom: 30px;
+  }
+
+  footer {
+    margin: 45px;
+
+    a {
+      color: #444;
+
+      &:hover {
+        color: #d9534f;
+        text-decoration: none;
+      }
+    }
+
+    nav {
+      ul {
+        list-style: none;
+
+        li {
+          display: inline-block;
+          margin-left: 30px;
+        }
+      }
+    }
+  }
 }
