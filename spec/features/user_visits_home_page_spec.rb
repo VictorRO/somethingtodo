@@ -6,6 +6,6 @@ RSpec.feature 'user visits home page' do
     visit root_path
 
     expect(page).to have_selector :link, 'Sign in', href: '#'
-    expect(page).to have_selector :link, 'Sign up now!', href: '#'
+    expect(page).to have_selector :link, 'Sign up now!', href: '/signup'
   end
 end

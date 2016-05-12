@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get 'home', to: 'static_pages#home'
   get 'about', to: 'static_pages#about'
+  get 'signup', to: 'users#new'
 
   constraints subdomain: 'app' do
     resources :tasks, only: [:create, :index, :update] do
