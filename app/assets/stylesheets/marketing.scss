@@ -1,0 +1,83 @@
+/* marketing */
+
+#marketing {
+  background-color: #FEFEFE;
+
+  .container-fluid {
+    background-size: cover;
+    background-position: center top;
+    padding-bottom: 5em;
+  }
+
+  header {
+    margin: 30px;
+
+    h1 {
+      font-size: 22px;
+      font-family: "Roboto Slab", serif;
+
+      a {
+        color: #333;
+
+        &:hover {
+          color: #d9534f;
+          text-decoration: none;
+        }
+
+        .glyphicon {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  h2 {
+    font-family: "Roboto Slab", serif;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-top: 3em;
+    margin-bottom: 1em;
+
+    small {
+      color: #777;
+      font-weight: 300;
+    }
+  }
+
+  img {
+    margin: auto;
+  }
+
+  .sign_up {
+    margin-top: 30px;
+    color: $nav-bg-color;
+  }
+
+  h1, p {
+    margin-bottom: 30px;
+  }
+
+  footer {
+    margin: 45px;
+
+    a {
+      color: #444;
+
+      &:hover {
+        color: #d9534f;
+        text-decoration: none;
+      }
+    }
+
+    nav {
+      ul {
+        list-style: none;
+
+        li {
+          display: inline-block;
+          margin-left: 30px;
+        }
+      }
+    }
+  }
+}

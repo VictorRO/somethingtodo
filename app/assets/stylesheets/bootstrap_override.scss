@@ -1,0 +1,57 @@
+/* override bootstrap */
+
+.navbar {
+  border-radius: 0px;
+  min-height: 35px;
+  margin-bottom: 0;
+}
+
+.navbar-brand {
+  padding: 8px 15px;
+  font-size: 16px;
+  line-height: 19px;
+  height: 35px;
+}
+
+.navbar-nav > li > a {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.navbar-default {
+  background-color: $nav-bg-color;
+  border-color: $nav-border-color;
+
+  .navbar-brand {
+    .glyphicon {
+      border: none;
+      color: #FFF;
+      font-size: 20px;
+      padding: 0;
+      margin-top: -3px;
+    }
+  }
+
+  .navbar-nav > li > a,
+  .navbar-brand {
+    color: $nav-a-color;
+  }
+
+  .navbar-nav > li > a:hover,
+  .navbar-brand:hover {
+    color: $nav-a-hover;
+  }
+
+  .gravatar {
+    border: 1px solid $nav-a-hover;
+    margin: -5px 5px -3px 0;
+    vertical-align: middle;
+  }
+
+  .glyphicon {
+    border: 1px solid $nav-a-color;
+    border-radius: 4px;
+    padding: 2px 3px;
+    margin-right: 5px;
+  }
+}

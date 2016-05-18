@@ -12,5 +12,7 @@ Rails.application.routes.draw do
     root 'tasks#index', as: :app_root
   end
 
+  resources :users, only: [:create]
+
   root 'static_pages#home'
 end

@@ -1,71 +1,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "jquery-ui";
-
-$main-bg-color: #e6e8e7;
-$main-color: #333;
-$nav-bg-color: #636f7f;
-$nav-border-color: #536071;
-$nav-a-color: #CCD0D2;
-$nav-a-hover: #edf1f2;
-$todos-border-color: #dbdfe0;
-$todos-bg-color: #f2f2f2;
-$li-bg-color: #FFF;
-$gray-light: #999;
-$done-bg-color: #FCFCFC;
-
-/* override bootstrap */
-
-.navbar {
-  border-radius: 0px;
-  min-height: 35px;
-  margin-bottom: 0;
-}
-
-.navbar-brand {
-  padding: 8px 15px;
-  font-size: 16px;
-  line-height: 19px;
-  height: 35px;
-}
-
-.navbar-nav > li > a {
-  padding-top: 8px;
-  padding-bottom: 8px;
-}
-
-.navbar-default {
-  background-color: $nav-bg-color;
-  border-color: $nav-border-color;
-
-  .navbar-brand {
-    .glyphicon {
-      border: none;
-      color: #FFF;
-      font-size: 20px;
-      padding: 0;
-      margin-top: -3px;
-    }
-  }
-
-  .navbar-nav > li > a,
-  .navbar-brand {
-    color: $nav-a-color;
-  }
-
-  .navbar-nav > li > a:hover,
-  .navbar-brand:hover {
-    color: $nav-a-hover;
-  }
-
-
-  .glyphicon {
-    border: 1px solid $nav-a-color;
-    border-radius: 4px;
-    padding: 2px 3px;
-    margin-right: 5px;
-  }
-}
+@import "variables";
+@import "bootstrap_override";
+@import "marketing";
 
 /* custom */
 
@@ -211,86 +149,34 @@ ul.todos {
   border: 2px dashed $todos-border-color;
 }
 
-/* marketing */
+/* forms */
 
-#marketing {
-  background-color: #FEFEFE;
-
-  .container-fluid {
-    background-size: cover;
-    background-position: center top;
-    padding-bottom: 5em;
+form {
+  .btn {
+    margin-top: 10px;
   }
+}
 
-  header {
-    margin: 30px;
-
-    h1 {
-      font-size: 22px;
-      font-family: "Roboto Slab", serif;
-
-      a {
-        color: #333;
-
-        &:hover {
-          color: #d9534f;
-          text-decoration: none;
-        }
-
-        .glyphicon {
-          margin-right: 5px;
-        }
-      }
-    }
+#error_explanation {
+  color: $state-danger-text;
+  ul {
+    color: $state-danger-text;
+    margin: 0 0 30px 0;
   }
+}
 
-  h2 {
-    font-family: "Roboto Slab", serif;
-    font-weight: 300;
-    line-height: 1.6;
-    margin-top: 3em;
-    margin-bottom: 1em;
-
-    small {
-      color: #777;
-      font-weight: 300;
-    }
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
   }
+}
 
-  img {
-    margin: auto;
-  }
+/* miscellaneous */
 
-  .sign_up {
-    margin-top: 30px;
-    color: $nav-bg-color;
-  }
-
-  h1, p {
-    margin-bottom: 30px;
-  }
-
-  footer {
-    margin: 45px;
-
-    a {
-      color: #444;
-
-      &:hover {
-        color: #d9534f;
-        text-decoration: none;
-      }
-    }
-
-    nav {
-      ul {
-        list-style: none;
-
-        li {
-          display: inline-block;
-          margin-left: 30px;
-        }
-      }
-    }
-  }
+.debug_dump {
+  clear: both;
+  margin: 45px auto;
+  width: 80%;
+  @include box_sizing;
 }

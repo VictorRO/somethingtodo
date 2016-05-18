@@ -1,0 +1,19 @@
+/* mixins, variables, etc. */
+
+$main-bg-color: #e6e8e7;
+$main-color: #333;
+$nav-bg-color: #636f7f;
+$nav-border-color: #536071;
+$nav-a-color: #CCD0D2;
+$nav-a-hover: #edf1f2;
+$todos-border-color: #dbdfe0;
+$todos-bg-color: #f2f2f2;
+$li-bg-color: #FFF;
+$gray-light: #999;
+$done-bg-color: #FCFCFC;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}

@@ -10,6 +10,10 @@
     = render partial: 'common/calendar', locals: { current_date: Date.current }
 
 .row
+  .col-xs-12
+    = bootstrap_flash
+
+.row
   .col-xs-12.col-sm-4
     %ul.todos#main
       %li.header

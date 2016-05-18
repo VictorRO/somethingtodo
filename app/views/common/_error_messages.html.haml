@@ -1,0 +1,8 @@
+- if item.errors.any?
+  #error_explanation
+    .alert.alert-danger
+      %strong UPS!
+      Please, fix the #{ pluralize(item.errors.count, "error") } before you can continue.
+    %ul
+      - item.errors.full_messages.each do |msg|
+        %li= msg
