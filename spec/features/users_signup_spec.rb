@@ -13,6 +13,7 @@ RSpec.feature "Users signup" do
 
     click_on 'Create my account'
 
+    expect(page).to have_content 'James Earl Jones'
     expect(page).to have_content 'Welcome to Something TO-DO!'
     expect(page).to have_selector 'ul#main'
     expect(page).to have_selector 'ul#starred'

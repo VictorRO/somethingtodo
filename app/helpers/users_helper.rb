@@ -1,9 +1,5 @@
 module UsersHelper
 
-  def current_user
-    @current_user ||= User.new(name: 'Guess', email: 'victor@rodriguezortega.com')
-  end
-
   def gravatar_for(user, options = {})
     gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
     size = options[:size] || 80

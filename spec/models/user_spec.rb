@@ -37,3 +37,44 @@ RSpec.describe User, 'validations' do
     end
   end
 end
+
+RSpec.describe User, '#remember' do
+  it 'updates the remember_digest attribute' do
+    user = create(:user, remember_digest: nil)
+
+    user.remember
+    user.reload
+
+    expect(user.remember_digest).not_to be_nil
+  end
+end
+
+RSpec.describe User, '#forget' do
+  it 'removes the remember_digest attribute from database' do
+    user = create(:user, remember_digest: 'some token')
+
+    user.forget
+    user.reload
+
+    expect(user.remember_digest).to be_nil
+  end
+end
+
+RSpec.describe User, '#authenticated?' do
+  context 'when the remember_digest is nil' do
+    it 'returns false' do
+      user = create(:user, remember_digest: nil)
+
+      expect(user.authenticated?('')).to be false
+    end
+  end
+
+  context 'when the remember_digest is set' do
+    it 'returns true if the remember_distest is equal to the remember_token' do
+      remember_token = User.new_token
+      user = create(:user, remember_digest: User.digest(remember_token))
+
+      expect(user.authenticated?(remember_token)).to be true
+    end
+  end
+end

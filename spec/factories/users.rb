@@ -4,6 +4,7 @@ FactoryGirl.define do
     email { Faker::Internet.email }
     password 'secrets'
     password_confirmation 'secrets'
+    password_digest { User.digest('secrets') }
 
     trait :invalid do
       name nil

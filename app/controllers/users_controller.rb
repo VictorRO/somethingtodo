@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
+      log_in @user
       redirect_to root_url(subdomain: 'app'), flash: { success: "Welcome to Something TO-DO!"}
     else
       render :new

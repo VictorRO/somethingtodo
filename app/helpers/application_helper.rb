@@ -10,12 +10,6 @@ module ApplicationHelper
   end
 
   def bootstrap_flash
-    flash.each do |type, message|
-
-    end
-  end
-
-  def bootstrap_flash
     flash_messages = []
     flash.each do |type, message|
       tag_options = { class: "alert fade in alert-#{type}", role: "alert" }
