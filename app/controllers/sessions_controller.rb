@@ -1,6 +1,8 @@
 class SessionsController < ApplicationController
   layout 'marketing'
 
+  skip_before_action :authenticate_user!
+
   def new
   end
 

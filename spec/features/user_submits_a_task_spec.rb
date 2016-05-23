@@ -2,8 +2,10 @@ require 'rails_helper'
 
 RSpec.feature "User submits a task" do
   scenario "they see the submited task in the INBOX list", :js do
+    user = create(:user)
     task_title = "First thing to do"
 
+    sign_in(user)
     switch_to_subdomain('app')
     visit root_path
     fill_in "task_title", with: task_title

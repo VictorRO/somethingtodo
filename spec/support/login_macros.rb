@@ -9,6 +9,7 @@ module LoginMacros
   end
 
   def sign_in(user)
+    switch_to_main_domain
     visit root_path
     click_on 'Sign in'
     fill_in 'session_email', with: user.email

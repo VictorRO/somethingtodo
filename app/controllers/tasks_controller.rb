@@ -1,17 +1,17 @@
 class TasksController < ApplicationController
   def index
     @task = Task.new
-    @tasks_normal = Task.from_today.normal
-    @tasks_high = Task.from_today.high
-    @tasks_low = Task.from_today.low
+    @tasks_normal = current_user.tasks.from_today.normal
+    @tasks_high = current_user.tasks.from_today.high
+    @tasks_low = current_user.tasks.from_today.low
   end
 
   def create
     @task = Task.new task_params
-    @task.save
+    current_user.tasks << @task
 
     respond_to do |format|
-      format.html { redirect_to root_path }
+      format.html { redirect_to root_url(subdomain: 'app') }
       format.js {}
     end
   end
@@ -21,7 +21,7 @@ class TasksController < ApplicationController
     @task.update task_params
 
     respond_to do |format|
-      format.html { redirect_to root_path }
+      format.html { redirect_to root_url(subdomain: 'app') }
       format.js {}
     end
   end

@@ -18,7 +18,6 @@ RSpec.describe UsersController do
 
       it "re-renders the form" do
         post :create, user: attributes_for(:user, :invalid)
-
         expect(response).to render_template :new
       end
     end

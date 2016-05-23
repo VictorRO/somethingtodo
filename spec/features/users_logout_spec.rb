@@ -4,7 +4,6 @@ RSpec.feature "users logout" do
   scenario "they are back the home page" do
     user = create(:user)
 
-    switch_to_main_domain
     sign_in(user)
     switch_to_subdomain('app')
 
