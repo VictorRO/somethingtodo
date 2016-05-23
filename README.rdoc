@@ -1,28 +1,8 @@
-== README
+# Something TO-DO
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hi! I'm Víctor Rodríguez, freelance web developer. You can reach me at **[rodriguezortega.com](http://rodriguezortega.com)**. Or contact me by **[mail](mailto:hello@rodriguezortega.com)**.
 
-Things you may want to cover:
+#### What's this?
+Yes, it may seam silly, but it is just another TO-DO manager.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+It has been create to learn and improve my skills testing with RSpec.
