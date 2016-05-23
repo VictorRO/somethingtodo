@@ -32,6 +32,13 @@
     }
   }
 
+  .navbar-nav > .open > a,
+  .navbar-nav > .open > a:hover,
+  .navbar-nav > .open > a:focus {
+    color: $nav-a-hover;
+    background-color: $nav-bg-color;
+  }
+
   .navbar-nav > li > a,
   .navbar-brand {
     color: $nav-a-color;
@@ -53,6 +60,20 @@
     border-radius: 4px;
     padding: 2px 3px;
     margin-right: 5px;
+  }
+
+  .dropdown-menu {
+    background-color: $nav-bg-color;
+
+    & > li > a {
+      color: $nav-a-color;
+      background-color: $nav-bg-color;
+    }
+
+    & > li > a:hover {
+      color: $nav-a-hover;
+      background-color: $nav-bg-color;
+    }
   }
 }
 
